@@ -45,7 +45,7 @@ namespace Squadron
         /// <summary>
         /// A list of additional ports, that were exposed in addition to the main port
         /// </summary>
-        public IList<ContainerPortMapping> AdditionalPorts { get; } =
+        public IList<ContainerPortMapping> AdditionalPorts { get; set; } =
             new List<ContainerPortMapping>();
 
         /// <summary>

@@ -32,6 +32,8 @@ namespace Squadron
                 .Should()
                 .ContainSingle(port => port.InternalPort == 29171);
 
+            await _resource.RestartContainer();
+
             var client = new HttpClient();
             foreach (ContainerPortMapping port in _resource.Instance.AdditionalPorts)
             {

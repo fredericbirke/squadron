@@ -100,6 +100,7 @@ namespace Squadron
         {
             await StopContainerAsync();
             await StartContainerAsync();
+            await ResolveHostAddressAsync();
         }
 
         /// <inheritdoc/>
@@ -420,6 +421,7 @@ namespace Squadron
             if (addressMode == ContainerAddressMode.Port)
             {
                 Instance.HostPort = ResolvePort(inspectResponse,$"{_settings.InternalPort}/tcp");
+                Instance.AdditionalPorts = new List<ContainerPortMapping>();
                 foreach (var portMapping in _settings.AdditionalPortMappings)
                 {
                     Instance.AdditionalPorts.Add(new ContainerPortMapping()
