@@ -115,6 +115,11 @@ namespace Squadron
         protected virtual void OnSettingsBuilded(ContainerResourceSettings settings)
         { }
 
+        /// <summary>
+        /// Stops the container and starts it again afterwards
+        /// </summary>
+        /// <returns></returns>
+        public Task RestartContainer() => Manager.RestartContainerAsync();
 
         public async Task PauseContainer(TimeSpan pauseTime)
         {}
