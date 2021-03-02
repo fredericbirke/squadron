@@ -49,6 +49,12 @@ namespace Squadron
         Task RemoveContainerAsync();
 
         /// <summary>
+        /// Stops the container and starts it again afterwards
+        /// </summary>
+        /// <returns></returns>
+        Task RestartContainerAsync();
+
+        /// <summary>
         /// Stops the container.
         /// </summary>
         /// <returns></returns>

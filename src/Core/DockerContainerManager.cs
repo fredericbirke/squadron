@@ -95,7 +95,12 @@ namespace Squadron
 #endif
         }
 
-
+        /// <inheritdoc/>
+        public async Task RestartContainerAsync()
+        {
+            await StopContainerAsync();
+            await StartContainerAsync();
+        }
 
         /// <inheritdoc/>
         public async Task CreateAndStartContainerAsync()

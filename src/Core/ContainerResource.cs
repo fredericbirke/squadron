@@ -123,6 +123,12 @@ namespace Squadron
         protected virtual void OnOptionsInitialized(TOptions options)
         { }
 
+        /// <summary>
+        /// Stops the container and starts it again afterwards
+        /// </summary>
+        /// <returns></returns>
+        public Task RestartContainer() => Manager.RestartContainerAsync();
+
         public async Task PauseContainer(TimeSpan pauseTime)
         {}
 
